@@ -1,0 +1,123 @@
+
+body {
+    background-color: #526D82;
+}
+
+/* CANVAS AND CANVAS CONTAINER */
+#container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#canvas {
+    background-color: black;
+    width: 580px;
+    height: 580px;
+    display: grid;
+}
+
+.pixels {
+    background-color: white;
+}
+
+
+/* BUTTONS */
+
+/* //BUTTON STYLES */
+/* reset canvas */
+.button-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ui-buttons {
+    margin: 25px;
+}
+
+button {
+    padding: 0.1em 0.25em;
+    background-color: #27374D;
+    border: 0.08em solid #DDE6ED;
+    border-radius: 0.3em;
+    font-size: 12px;
+  }
+  
+  button span {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 0.4em;
+    width: 8.25em;
+    height: 2.5em;
+    background-color: #27374D;
+    border-radius: 0.2em;
+    font-size: 1.5em;
+    color: #DDE6ED;
+    border: 0.08em solid #DDE6ED;
+    box-shadow: 0 0.4em 0.1em 0.019em #DDE6ED;
+  }
+  
+  button span:hover {
+    transition: all 0.5s;
+    transform: translate(0, 0.4em);
+    box-shadow: 0 0 0 0 #fff;
+  }
+  
+  button span:not(hover) {
+    transition: all 1s;
+  }
+
+  /* checkbox */
+  .cyberpunk-button {
+    background-color: #30cfd0;
+    color: #fff;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    padding: 15px 25px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .cyberpunk-checkbox {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #30cfd0;
+    border-radius: 5px;
+    background-color: transparent;
+    display: inline-block;
+    position: relative;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+  
+  .cyberpunk-checkbox:before {
+    content: "";
+    background-color: #30cfd0;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 10px;
+    height: 10px;
+    border-radius: 3px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .cyberpunk-checkbox:checked:before {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  
+  .cyberpunk-checkbox-label {
+    font-size: 18px;
+    color: #fff;
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    align-items: center;
+  }

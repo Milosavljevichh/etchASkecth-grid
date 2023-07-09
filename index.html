@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<head>
+
+    <title>Etch-A-Sketch</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"  defer></script>
+
+</head>
+<body>
+
+    <div id="container">
+        <div id="canvas">
+
+        </div>
+    </div>
+    <div class="button-container">
+        <button id="reset-canvas"class="ui-buttons" onclick="resetCanvas()">
+            <span>Reset canvas</span>
+        </button>
+        <input type="checkbox" id="toggleGrid" name="toggleGrid" class="cyberpunk-checkbox" onclick="{toggleGrid()}">
+        <label for="toggleGrid" class="cyberpunk-checkbox-label"> Toggle grid</label><br>
+    </div>
+
+</body>
