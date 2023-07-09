@@ -39,20 +39,23 @@ function generateCanvas(size, neededNumber) {
         pixel.classList.add('pixels');
         canvas.appendChild(pixel);
     };
+    paintingOver();
 };
 
 //painting on canvas
+function paintingOver() {
 let square = canvas.querySelectorAll('div.pixels');
 square.forEach((pixel) => {
     pixel.onmouseover = () => {
         pixel.style.backgroundColor = 'black';
     };
-})
+})};
 
 //reseting canvas
 const resetBtn = document.querySelector("#reset-canvas");
 
 function resetCanvas() {
+    let square = canvas.querySelectorAll('div.pixels');
     square.forEach((pixel) => {
             pixel.style.backgroundColor = "white";
     })
