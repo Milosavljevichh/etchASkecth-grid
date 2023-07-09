@@ -2,17 +2,39 @@
 const canvas = document.querySelector('#canvas');
 const canvasChildren = canvas.childNodes.length;
 
-let pixelSize = 25;
 
-let neededPixels = pixelSize**2;
-console.log(neededPixels);
+//Slider
+const slider = document.querySelector('#myRange');
 
 
-//canvas generatiom
+
+
+//canvas generation
+//generating canvas as soon as the page loads
+let firstGenSize = slider.value
+let neededFirstPixels = firstGenSize**2;
+
+
 if (canvasChildren > 0) {
+    generateCanvas(firstGenSize, neededFirstPixels);
+};
 
-    canvas.style.gridTemplateColumns =`repeat(${pixelSize}, auto)`;
-    for (let i = canvasChildren; i <= neededPixels; i++){
+//generating canvas after the slider changes value
+ function fireCanvasGeneration() {
+    let pixelSize = slider.value;
+    let neededPixels = pixelSize**2;
+    console.log(neededPixels);
+
+    while (canvas.firstChild) {
+        canvas.removeChild(canvas.lastChild);
+      };
+
+      generateCanvas(pixelSize, neededPixels);
+};
+
+function generateCanvas(size, neededNumber) {
+    canvas.style.gridTemplateColumns =`repeat(${size}, auto)`;
+    for (let i = canvasChildren; i <= neededNumber; i++){
         const pixel = document.createElement("div");
         pixel.classList.add('pixels');
         canvas.appendChild(pixel);
@@ -46,3 +68,5 @@ if (toggle.checked === true) {
 } else if (toggle.checked === false) {
     canvas.style.gap = '0px'
 }};
+
+

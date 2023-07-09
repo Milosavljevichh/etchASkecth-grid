@@ -3,7 +3,7 @@ body {
     background-color: #526D82;
 }
 
-/* CANVAS AND CANVAS CONTAINER */
+/* CONTAINERS */
 #container {
     display: flex;
     align-items: center;
@@ -19,6 +19,12 @@ body {
 
 .pixels {
     background-color: white;
+}
+
+.slidecontainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 
@@ -120,4 +126,8 @@ button {
     user-select: none;
     display: flex;
     align-items: center;
+  }
+
+  .slider:hover {
+    opacity: 1;
   }
