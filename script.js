@@ -19,8 +19,10 @@ if (canvasChildren > 0) {
     generateCanvas(firstGenSize, neededFirstPixels);
 };
 
+
 //generating canvas after the slider changes value
- function fireCanvasGeneration() {
+ function fireCanvasGeneration() {   
+
     let pixelSize = slider.value;
     let neededPixels = pixelSize**2;
     console.log(neededPixels);
@@ -43,11 +45,21 @@ function generateCanvas(size, neededNumber) {
 };
 
 //painting on canvas
+const pickedColor = document.querySelector('#pickedColor');
+let selectedColor = pickedColor.value;
+
+
+
+pickedColor.addEventListener('change', function(){
+    selectedColor = pickedColor.value;
+});
+
+
 function paintingOver() {
 let square = canvas.querySelectorAll('div.pixels');
 square.forEach((pixel) => {
     pixel.onmouseover = () => {
-        pixel.style.backgroundColor = 'black';
+        pixel.style.backgroundColor = selectedColor;
     };
 })};
 
