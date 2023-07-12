@@ -1,22 +1,27 @@
 
+
 body {
     background-color: #526D82;
+    display: flex;
+    align-items: center;
+    justify-items: center;
 }
 
 label {
   font-family: 'Cartoony';
+  font-weight: 300;
 }
 
 @font-face {
-  font-family: 'Cartoony'; /*a name to be used later*/
-  src: url(..\etchASkecth-grid\fonts\ConcertOne-Regular.ttf); /*URL to font*/
+  font-family: 'Cartoony'; 
+  src: url(../etchASkecth-grid/fonts/ConcertOne-Regular.ttf); 
 }
 
 /* CONTAINERS */
 .main-container {
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
+  align-items: flex-end;
   justify-content: center;
   margin: auto;
 }
@@ -90,6 +95,7 @@ button {
   text-decoration: none;
   font-family: inherit;
   font-size: 15px;
+  font-family: 'Cartoony'; 
  }
  
  button.learn-more {
