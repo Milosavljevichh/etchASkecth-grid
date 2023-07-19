@@ -3,6 +3,9 @@ const canvas = document.querySelector('#canvas');
 const canvasChildren = canvas.childNodes.length;
 const canvasChildrenDivs = canvas.childNodes;
 
+const pickedCanvasColor = document.querySelector('#pickedCanvasColor');
+let selectedCanvasColor = pickedCanvasColor.value;
+
 
 //Slider
 const slider = document.querySelector('#myRange');
@@ -20,11 +23,10 @@ if (canvasChildren > 0) {
 
 //generating canvas after the slider changes value
  function fireCanvasGeneration() {   
-    selectedCanvasColor = '#ffffff';
-    pickedCanvasColor.value = '#ffffff'
+    
+    pickedCanvasColor.value = "#ffffff";
     let pixelSize = slider.value;
     let neededPixels = pixelSize**2;
-    console.log(neededPixels);
 
     while (canvas.firstChild) {
         canvas.removeChild(canvas.lastChild);
@@ -47,8 +49,7 @@ function generateCanvas(size, neededNumber) {
 
 
 //selecting canvas color
-const pickedCanvasColor = document.querySelector('#pickedCanvasColor');
-let selectedCanvasColor = pickedCanvasColor.value;
+
 
 pickedCanvasColor.addEventListener('change', function(){
     selectedCanvasColor = pickedCanvasColor.value;
