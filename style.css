@@ -77,6 +77,12 @@ label {
     border-radius: 10px;
 }
 
+#myCanvas {
+  width: 580px;
+  height: 580px;
+}
+
+
 .pixels {
     background-color: white;
 }

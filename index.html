@@ -37,16 +37,35 @@
             <button id="reset-canvas" class="learn-more" onclick="resetCanvas()"> 
                 Reset canvas
             </button>
+            <button id="exportImage" class="learn-more" onclick="exportImage()"> 
+                Export image
+            </button>
         </div>
         </div>
         <div id="container">
             <p>This is a small project made for <i><a href="https://www.theodinproject.com/about">"The Odin Project"</a></i>. It's not optimized for mobile or tablet.
             Feel free to check out my <i><a href="https://github.com/Milosavljevichh">Github</a></i> and my <i><a href="https://milosavljevich.itch.io/">Itch.io</a></i>.</p>
-            <div id="canvas">
-
+            <div class="exportingContainer">
+                <div id="canvas"> </div>
             </div>
         </div>
     </div>
     
+    <!-- Downloading canvas as image -->
+    <script src="html2canvas.min.js"></script>
+    <script >
+        document.querySelector('#exportImage').onclick = function() {
+            const scTarget = document.querySelector('#canvas');
+
+            html2canvas(scTarget).then((canvas) => {
+                const base64image = canvas.toDataURL("image/png");
+                var anchor = document.createElement('a');
+                anchor.setAttribute("href", base64image);
+                anchor.setAttribute("download", "drawing.png");
+                anchor.click();
+                anchor.remove();
+            });
+        };
+    </script>
 
 </body>

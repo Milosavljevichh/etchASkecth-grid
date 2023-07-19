@@ -20,7 +20,8 @@ if (canvasChildren > 0) {
 
 //generating canvas after the slider changes value
  function fireCanvasGeneration() {   
-    pickedCanvasColor.value = '#ffffff';
+    selectedCanvasColor = '#ffffff';
+    pickedCanvasColor.value = '#ffffff'
     let pixelSize = slider.value;
     let neededPixels = pixelSize**2;
     console.log(neededPixels);
@@ -112,5 +113,4 @@ if (toggle.checked === true) {
 } else if (toggle.checked === false) {
     canvas.style.gap = '0px'
 }};
-
 
