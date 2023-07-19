@@ -18,6 +18,14 @@ label {
 }
 
 /* CONTAINERS */
+.colorMiniContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px;
+  flex-direction: row;
+}
+
 .main-container {
   display: flex;
   flex-direction: row;
@@ -75,7 +83,8 @@ label {
 
 /* BUTTONS */
 
-#pickedColor {
+#pickedColor,
+#pickedCanvasColor {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -86,11 +95,13 @@ label {
   cursor: pointer;
 }
 
-#pickedColor::-webkit-color-swatch {
+#pickedColor::-webkit-color-swatch,
+#pickedCanvasColor::-webkit-color-swatch {
   border-radius: 50%;
   border: 3px solid #27374D;
 }
-#pickedColor::-moz-color-swatch {
+#pickedColor::-moz-color-swatch,
+#pickedCanvasColor::-moz-color-swatch {
   border-radius: 50%;
   border: 3px solid #27374D;
 }

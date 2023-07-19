@@ -1,6 +1,7 @@
 
 const canvas = document.querySelector('#canvas');
 const canvasChildren = canvas.childNodes.length;
+const canvasChildrenDivs = canvas.childNodes;
 
 
 //Slider
@@ -48,7 +49,17 @@ function generateCanvas(size, neededNumber) {
 const pickedColor = document.querySelector('#pickedColor');
 let selectedColor = pickedColor.value;
 
+const pickedCanvasColor = document.querySelector('#pickedCanvasColor');
+let selectedCanvasColor = pickedCanvasColor.value;
 
+pickedCanvasColor.addEventListener('change', function(){
+    selectedCanvasColor = pickedCanvasColor.value;
+  
+    let square = canvas.querySelectorAll('div.pixels');
+    square.forEach((pixel) => {
+        pixel.style.backgroundColor = selectedCanvasColor;
+})
+});
 
 pickedColor.addEventListener('change', function(){
     selectedColor = pickedColor.value;
