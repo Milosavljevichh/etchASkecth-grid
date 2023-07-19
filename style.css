@@ -85,6 +85,7 @@ label {
 
 .pixels {
     background-color: white;
+    -webkit-user-drag: none;
 }
 
 .slidecontainer {

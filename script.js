@@ -112,5 +112,14 @@ if (toggle.checked === true) {
     canvas.style.gap = '1px'
 } else if (toggle.checked === false) {
     canvas.style.gap = '0px'
+    canvas.backgroundColor = selectedCanvasColor;
 }};
 
+//disable drag and drop
+document.body.addEventListener('dragstart', event => {
+    event.preventDefault();
+  });
+  
+  document.body.addEventListener('drop', event => {
+    event.preventDefault();
+  });
