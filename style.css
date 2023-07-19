@@ -31,6 +31,7 @@ label {
   align-items: center;
   justify-content: center;
   margin: 30px;
+  flex-direction: column;
 }
 
 #container {
@@ -44,6 +45,8 @@ label {
     width: 580px;
     height: 580px;
     display: grid;
+    border: 9px solid #27374D;
+    border-radius: 10px;
 }
 
 .pixels {
@@ -63,8 +66,35 @@ label {
   justify-content: flex-end;
 }
 
+/* LABELS */
+
+.ColorLabel {
+  margin: 5px;
+  color: aliceblue;
+}
 
 /* BUTTONS */
+
+#pickedColor {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: transparent;
+  width: 45px;
+  height: 45px;
+  border: none;
+  cursor: pointer;
+}
+
+#pickedColor::-webkit-color-swatch {
+  border-radius: 50%;
+  border: 3px solid #27374D;
+}
+#pickedColor::-moz-color-swatch {
+  border-radius: 50%;
+  border: 3px solid #27374D;
+}
+
 
 /* //BUTTON STYLES */
 .toggle {
@@ -79,6 +109,7 @@ label {
     justify-content: center;
     margin: 30px;
     gap: 30px
+    
 }
 
 .ui-buttons {
@@ -96,14 +127,15 @@ button {
   font-family: inherit;
   font-size: 15px;
   font-family: 'Cartoony'; 
+  
  }
  
  button.learn-more {
-  font-weight: 600;
-  color: #382b22;
+  font-weight: 400;
+  color: aliceblue;
   text-transform: uppercase;
   padding: 1em 1.5em;
-  background: #89c2b5;
+  background: #50ac96;
   border: 2px solid #2E4F4F;
   border-radius: 0.75em;
   -webkit-transform-style: preserve-3d;
@@ -131,7 +163,7 @@ button {
  }
  
  button.learn-more:hover {
-  background: #CBE4DE;
+  background: #7dbeb0;
   -webkit-transform: translate(0, 0.25em);
   transform: translate(0, 0.25em);
  }

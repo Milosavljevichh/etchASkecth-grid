@@ -15,7 +15,14 @@
       <div class="main-container">
         <div class="options">
             <div class="colorContainer">
-                <input type="color" id="pickedColor" name="pickedColor" value="#ff0000">
+                <div>
+                    <label class="ColorLabel">Canvas color</label>
+                    <input type="color" id="pickedCanvasColor" name="pickedCanvasColor" value="#ffffff">
+                </div>
+                <div>
+                    <label class="ColorLabel">Brush color</label>
+                    <input type="color" id="pickedColor" name="pickedColor" value="#27374D">
+                </div>
             </div>
             <div class="slidecontainer">
                 <input type="range" min="1" max="50" value="8" class="slider" id="myRange" oninput="fireCanvasGeneration()">
