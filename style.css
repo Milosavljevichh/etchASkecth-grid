@@ -7,6 +7,25 @@ body {
     justify-items: center;
 }
 
+p {
+  font-family: 'Cartoony';
+  font-weight: 300;
+  color: aliceblue;
+  margin: 35px 0 20px 0;
+  width: 580px;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+  color: #50ac96;
+  transition: 1s;
+}
+
+a:hover {
+  color: #00ffff;
+}
+
 label {
   font-family: 'Cartoony';
   font-weight: 300;
@@ -46,6 +65,7 @@ label {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
 }
 
 #canvas {

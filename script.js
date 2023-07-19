@@ -7,9 +7,6 @@ const canvasChildrenDivs = canvas.childNodes;
 //Slider
 const slider = document.querySelector('#myRange');
 
-
-
-
 //canvas generation
 //generating canvas as soon as the page loads
 let firstGenSize = slider.value
@@ -23,7 +20,7 @@ if (canvasChildren > 0) {
 
 //generating canvas after the slider changes value
  function fireCanvasGeneration() {   
-
+    pickedCanvasColor.value = '#ffffff';
     let pixelSize = slider.value;
     let neededPixels = pixelSize**2;
     console.log(neededPixels);
@@ -45,10 +42,10 @@ function generateCanvas(size, neededNumber) {
     paintingOver();
 };
 
-//painting on canvas
-const pickedColor = document.querySelector('#pickedColor');
-let selectedColor = pickedColor.value;
 
+
+
+//selecting canvas color
 const pickedCanvasColor = document.querySelector('#pickedCanvasColor');
 let selectedCanvasColor = pickedCanvasColor.value;
 
@@ -61,17 +58,38 @@ pickedCanvasColor.addEventListener('change', function(){
 })
 });
 
+
+//selecting color
+const pickedColor = document.querySelector('#pickedColor');
+let selectedColor = pickedColor.value;
+
 pickedColor.addEventListener('change', function(){
     selectedColor = pickedColor.value;
 });
 
+//check if mouse has been pressed down
+let mouseDown = false;
 
+canvas.addEventListener('mousedown', function() {
+    mouseDown = true;
+})
+
+canvas.addEventListener('mouseup', function() {
+    mouseDown = false;
+})
+
+//painting on canvas
 function paintingOver() {
 let square = canvas.querySelectorAll('div.pixels');
 square.forEach((pixel) => {
     pixel.onmouseover = () => {
+        if (mouseDown === true) {
         pixel.style.backgroundColor = selectedColor;
-    };
+    }};
+
+    pixel.onclick = () => {
+        pixel.style.backgroundColor = selectedColor;
+    }
 })};
 
 //reseting canvas
@@ -80,7 +98,7 @@ const resetBtn = document.querySelector("#reset-canvas");
 function resetCanvas() {
     let square = canvas.querySelectorAll('div.pixels');
     square.forEach((pixel) => {
-            pixel.style.backgroundColor = "white";
+            pixel.style.backgroundColor = selectedCanvasColor;
     })
 }
 
